@@ -311,3 +311,27 @@ left_scrolls.addEventListener('click', ()=>{
 right_scrolls.addEventListener('click', ()=>{
     item.scrollLeft += 330;
 })
+
+
+
+const travis = document.getElementById('travis-play');
+
+travis.addEventListener('click', () => {
+    if (!music.paused) {
+        music.pause();
+        makeAllPlays();
+        masterPlay.classList.add('bi-play-fill');
+        masterPlay.classList.remove('bi-pause-fill');
+        wave.classList.remove('active2');
+    } else {
+        music.src = 'audio/travis.mp3';
+        poster_master_play.src = 'img/travis.jpg'; 
+        music.play();
+        title.innerHTML = `SICKO MODE <div class="subtitle">Travis Scott</div>`; 
+        masterPlay.classList.remove('bi-play-fill');
+        masterPlay.classList.add('bi-pause-fill');
+        wave.classList.add('active2');
+    }
+});
+
+
